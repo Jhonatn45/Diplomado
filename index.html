@@ -10,15 +10,20 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: brown;
+            background-color: maroon;
             color: white;
         }
         .menu_opciones{
             display: flex;
-            justify-content: space-between;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
         }
-        .menu_opciones p{
+        .menu_opciones p, a{
             font-size: 20px;
+        }
+        p{
+            color:maroon;
         }
         .contenedor-imagenes{
             display: flex;
@@ -26,28 +31,47 @@
             flex-wrap: wrap;
             width: 90%;
         }
-        .contenedor-imagenes img{
-            width: 350px;
+        .imagen{
+            max-width: 350px;
             height: 350px;
+            margin: 10px;
+        }
+        .video{
+            display: flex;
+            flex: 1;
+        }
+        .imagen1{
+            display: flex;
+            flex: 4;
+        }
+        .imagen2, .imagen3{
+            display: flex;
+            flex: 1;
+        }
+        .imagen4{
+            display: flex;
+            flex: 4;
         }
     </style>
 </head>
 <body>
     <div class="header">
-        <h1>Titulo</h1>
+        <h1>Diplomado Full Stack</h1>
     </div>
-    <div class="menu_opciones">
-        <p>Inicio</p>
-        <p>Temas</p>
-        <p>Profesores</p>
-        <p>Estudiantes</p>
-    </div>
-    <div class="contenedor-imagenes">
-        <img src="https://images.pexels.com/photos/2208453/pexels-photo-2208453.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=250&w=340">
-        <img src="https://images.pexels.com/photos/2208453/pexels-photo-2208453.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=250&w=340">
-        <img src="https://images.pexels.com/photos/2208453/pexels-photo-2208453.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=250&w=340">
-        <img src="https://images.pexels.com/photos/2208453/pexels-photo-2208453.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=250&w=340">
-        <img src="https://images.pexels.com/photos/2208453/pexels-photo-2208453.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=250&w=340">
-    </div>
+    <section class="contenedor-general">
+        <div class="menu_opciones">
+            <p>Inicio</p>
+            <a href="https://www.facebook.com">Temas</a>
+            <p>Profesores</p>
+            <p>Estudiantes</p>
+        </div>
+        <div class="contenedor-imagenes">
+            <iframe class="video" src="https://www.youtube.com/embed/6tqSjoWuIsk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <img class="imagen imagen1" src="https://images.pexels.com/photos/2208453/pexels-photo-2208453.jpeg">
+            <img class="imagen imagen2" src="https://images.pexels.com/photos/2208453/pexels-photo-2208453.jpeg">
+            <img class="imagen imagen3" src="https://images.pexels.com/photos/2208453/pexels-photo-2208453.jpeg">
+            <img class="imagen imagen4" src="https://images.pexels.com/photos/2208453/pexels-photo-2208453.jpeg">
+        </div>
+    </section>
 </body>
 </html>
