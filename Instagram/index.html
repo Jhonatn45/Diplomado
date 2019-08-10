@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
+    <style>
+        .nav-principal{
+            order: 0;
+        }
+        .nav-static{
+            /* display: flex;
+            flex-direction: row; */
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(0,0,0,.0975);
+            /* position: fixed; */
+            background-color: #fff;
+            height: 77px;
+            top: 0;
+            /* z-index: 1; */
+            width: 100%;
+        }
+        .contenedor-nav-principal{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            max-width: 1010px;
+            padding: 26px 20px;
+            width: 100%;
+        }
+        .separador1{
+            flex:2;
+        }
+        .separador2{
+            flex:2;
+        }
+        .separador3{
+            flex: 1;
+        }
+        .logo-instagram{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            /* flex: 2; */
+        }
+        .center{
+            display: flex;
+        }
+        .logo-instagram img{
+            width: 25px;
+            height: 25px;
+        }
+        .busca input{
+            /* display: flex;
+            justify-content: stretch; */
+            /* border-radius: 2px; */
+        }
+        .perfil{
+            display: flex;
+            justify-content: space-around;
+            /* flex: 1; */
+        }
+
+        .seccion-principal{
+            display: flex;
+            background-color: #f7fcf8;
+            order: 1;
+            flex-grow: 1;
+        }
+        .contenedor-img-perfil{
+            display: flex;
+            justify-content: center;
+            flex: 2;
+        }
+        .img-perfil{
+            background-color: #fff;
+            border-radius: 50%;
+            box-sizing: border-box;
+            display: block;
+            flex: 0 0 auto;
+            overflow: hidden;
+            position: relative;
+            width: 150px;
+            height: 150px;
+        }
+        .contenido-perfil{
+            flex: 4;
+        }
+        .titulo-perfil{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+        .contenido-perfil h1{
+            font-size: 28px;
+            font-weight: 300;
+        }
+        .contenedor-buttons{
+            display: flex;
+            flex-direction: row;
+            margin-left: 20px;
+        }
+        .button-seguir button, .button-publicaciones button{
+            border-radius: 12%;
+            padding: 0 24px;
+            border-color: #3897f0;
+            background-color: #3897f0;    
+            color: white;
+            margin-left: 10px;
+            height: 30px;
+            width: 100px;
+            font-size: 16px;
+        }
+        .button-more button{
+            background-color: unset;
+            border: unset;
+            margin-left: 10px;
+            height: 30px;
+            width: 50px;
+            text-align: center;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav-principal">
+        <div class="nav-static">
+            <div class="contenedor-nav-principal">
+                <div class="separador1">
+                    <div class="logo-instagram">
+                        <div class="center">
+                            <img src="data:image/png;base64,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" alt="">
+                            <div class="separdor">|</div>
+                            <span>Instagram</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="separador2">
+                    <div class="busca">
+                        <input type="text" placeholder="busca">
+                    </div>
+                </div>
+                <div class="separador3">
+                    <div class="perfil">
+                        <span><i class="far fa-compass fa-lg"></i></span>
+                        <span><i class="far fa-heart fa-lg"></i></span>
+                        <span><i class="far fa-user fa-lg"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <section class="seccion-principal">
+        <div class="contenedor-img-perfil">
+            <div class="img-perfil">
+                    <img alt="Foto del perfil de komercia" class="_6q-tv" src="https://instagram.fvvc1-1.fna.fbcdn.net/vp/b14615a9cbc9e128fa2e28be4c32e8ab/5DDB404F/t51.2885-19/s150x150/37046979_247476945980393_7284164298069245952_n.jpg?_nc_ht=instagram.fvvc1-1.fna.fbcdn.net">
+            </div>
+        </div>
+        <div class="contenido-perfil">
+            <div class="titulo-perfil">
+                <h1>komercia</h1>
+                <div class="contenedor-buttons">
+                    <div class="button-seguir">
+                        <button>Seguir</button>
+                    </div>
+                    <div class="button-publicaciones">
+                        <button>v</button>
+                    </div>
+                    <div class="button-more">
+                        <button>...</button>
+                    </div>
+                </div>
+            </div>
+            <div class="seccion-publicaciones">
+                <div class=""></div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
